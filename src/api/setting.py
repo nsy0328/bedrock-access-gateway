@@ -23,6 +23,9 @@ AWS_REGION = os.environ.get("AWS_REGION", "us-west-2")
 DEFAULT_MODEL = os.environ.get(
     "DEFAULT_MODEL", "anthropic.claude-3-sonnet-20240229-v1:0"
 )
+DEFAULT_MAX_TOKENS = os.environ.get(
+    "DEFAULT_MAX_TOKENS", 2048
+)
 DEFAULT_EMBEDDING_MODEL = os.environ.get(
     "DEFAULT_EMBEDDING_MODEL", "cohere.embed-multilingual-v3"
 )

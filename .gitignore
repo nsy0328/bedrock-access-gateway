@@ -160,3 +160,12 @@ cython_debug/
 .idea/
 
 Config
+
+# MacOS
+.DS_Store
+
+# CDK
+.cdk.staging
+cdk.out
+!/cdk/lib/
+

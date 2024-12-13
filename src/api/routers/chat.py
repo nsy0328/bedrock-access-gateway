@@ -6,7 +6,7 @@ from fastapi.responses import StreamingResponse
 from api.auth import api_key_auth
 from api.models.bedrock import BedrockModel
 from api.schema import ChatRequest, ChatResponse, ChatStreamResponse
-from api.setting import DEFAULT_MODEL
+from api.setting import DEFAULT_MODEL, DEFAULT_MAX_TOKENS
 
 router = APIRouter(
     prefix="/chat",
@@ -34,6 +34,7 @@ async def chat_completions(
 ):
     if chat_request.model.lower().startswith("gpt-"):
         chat_request.model = DEFAULT_MODEL
+        chat_request.max_tokens = int(DEFAULT_MAX_TOKENS)
 
     # Exception will be raised if model not supported.
     model = BedrockModel()
